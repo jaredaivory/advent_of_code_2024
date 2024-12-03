@@ -1,10 +1,10 @@
-from main import PartOneSolution
+from main import PartOneSolution, import_input
 
 
 def test_import():
     actual1 = [3, 4, 2, 1, 3, 3]
     actual2 = [4, 3, 5, 3, 9, 3]
-    arr1, arr2 = PartOneSolution.import_input("example.txt")
+    arr1, arr2 = import_input("example.txt")
     assert actual1 == arr1
     assert actual2 == arr2
     pass
