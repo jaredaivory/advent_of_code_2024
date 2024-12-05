@@ -10,3 +10,4 @@ venv.bak/
 solutions/*/.pytest*
 
 solutions/*/puzzle_input.txt
+__pycache__
