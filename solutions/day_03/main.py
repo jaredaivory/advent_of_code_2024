@@ -13,9 +13,17 @@ def part_one_solve(data: List[str]) -> int:
     solution = 0
     for line in data:
         for val1, val2 in re.findall(regex_match, line):
-            print(val1, val2)
             solution += int(val1) * int(val2)
     return solution
+
+
+# def part_two_solve(data: List[str]) -> int:
+#     regex_match = r"(mul\((-?\d+),\s*(-?\d+)\)|((do\(\))|(don't\(\))))"
+#     solution = 0
+#     for line in data:
+#         for match in re.findall(regex_match, line):
+#             print(match)
+#     return solution
 
 
 if __name__ == "__main__":
