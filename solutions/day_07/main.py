@@ -20,6 +20,8 @@ def backtrack(result: int, values: List[int], index: int = 0, current_value: int
             return True
         if backtrack(result, values, index + 1, current_value * values[index]):
             return True
+        if backtrack(result, values, index + 1, int(str(current_value) + str(values[index]))):
+            return True
     return False
 
 
