@@ -3,11 +3,12 @@
 |  Advent Day |           Challenge Solution            | Part 1 | Part 2 |
 | ----------: | :-------------------------------------: | :----: | :----: |
 | [Day 01][1] | [Historian Hysteria](/solutions/day_01) |   ⭐   |   ⭐   |
-| [Day 02][1] |  [Red Nose Reports](/solutions/day_02)  |   ⭐   |        |
-| [Day 03][1] |    [Mull It Over](/solutions/day_03)    |   ⭐   |        |
-| [Day 04][1] |    [Ceres Search](/solutions/day_04)    |   ⭐   |        |
-| [Day 05][1] |    [Print Queue](/solutions/day_05)     |   ⭐   |        |
-| [Day 06][1] |  [Guard Gallivant](/solutions/day_06)   |   ⭐   |        |
+| [Day 02][2] |  [Red Nose Reports](/solutions/day_02)  |   ⭐   |        |
+| [Day 03][3] |    [Mull It Over](/solutions/day_03)    |   ⭐   |        |
+| [Day 04][4] |    [Ceres Search](/solutions/day_04)    |   ⭐   |        |
+| [Day 05][5] |    [Print Queue](/solutions/day_05)     |   ⭐   |        |
+| [Day 06][6] |  [Guard Gallivant](/solutions/day_06)   |   ⭐   |        |
+| [Day 07][7] |   [Bridge Repair](/solutions/day_07)    |   ⭐   |        |
 
 [1]: https://adventofcode.com/2024/day/1
 [2]: https://adventofcode.com/2024/day/2
