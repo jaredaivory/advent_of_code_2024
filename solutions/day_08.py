@@ -1,8 +1,8 @@
-from solutions.types import SolutionClass
+from .types import SolutionClass
 from typing import List, Optional
 
 
-class Solution(SolutionClass[List[List[str]], int]):
+class Day08Solution(SolutionClass[List[List[str]], int]):
     data: List[List[str]]
 
     def __init__(self, path: Optional[str] = None):
@@ -12,10 +12,8 @@ class Solution(SolutionClass[List[List[str]], int]):
 
     @classmethod
     def import_from_file(self, path) -> List[List[str]]:
-        with open(path, 'r') as file:
-            self.data = [[c for c in line.strip()]
-                         for line in file.readlines()]
-            return self.data
+        self.data = import_from_file(path)
+        return self.data
 
     @classmethod
     def part_one(self):
@@ -68,3 +66,9 @@ class Solution(SolutionClass[List[List[str]], int]):
                         currCol -= dC
                 antennas[c].append((row, col))
         return len(unique_annodes)
+
+
+def import_from_file(path) -> List[List[str]]:
+    with open(path, 'r') as file:
+        return [[c for c in line.strip()]
+                for line in file.readlines()]

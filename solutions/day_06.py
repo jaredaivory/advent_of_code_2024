@@ -1,7 +1,38 @@
 from typing import List, Tuple, Optional
+from .types import SolutionClass
 
 
-def import_input(path: str) -> List[List[chr]]:
+UP = (-1, 0)
+RIGHT = (0, 1)
+DOWN = (1, 0)
+LEFT = (0, -1)
+DIRECTIONS = [UP, RIGHT, DOWN, LEFT]
+
+
+class Day06Solution(SolutionClass[List[List[chr]], bool]):
+    data: List[List[chr]]
+
+    def __init__(self, path: Optional[str] = None):
+        super()
+        if path:
+            self.data = self.import_from_file(path)
+
+    @classmethod
+    def import_from_file(self, path: str) -> List[List[chr]]:
+        self.data = import_from_file(path)
+        return self.data
+
+    @classmethod
+    def part_one(self, *args):
+        starting_row, starting_col = get_starting_point(self.data, '^')
+        return number_of_unique_positions(self.data, starting_row, starting_col)
+
+    @classmethod
+    def part_two(self, *args):
+        raise NotImplementedError
+
+
+def import_from_file(path: str) -> List[List[chr]]:
     with open(path, 'r') as file:
         return [[c for c in line.strip()] for line in file.readlines()]
 
@@ -14,26 +45,19 @@ def get_starting_point(grid: List[List[chr]], key: chr) -> Optional[Tuple[int, i
     raise KeyError(key)
 
 
-UP = (-1, 0)
-RIGHT = (0, 1)
-DOWN = (1, 0)
-LEFT = (0, -1)
-directions = [UP, RIGHT, DOWN, LEFT]
-
-
 def is_within_bounds(grid: List[List[chr]], row: int, col: int) -> bool:
     if row < 0 or row >= len(grid) or col < 0 or col >= len(grid[0]):
         return False
     return True
 
 
-def part_one_solve(grid: List[List[chr]], row: int, col: int) -> int:
+def number_of_unique_positions(grid: List[List[chr]], row: int, col: int) -> int:
     positions = set()
     positions.add((row, col))
     grid[row][col] = "."
     direction = 0
     while is_within_bounds(grid, row, col):
-        dR, dC = directions[direction]
+        dR, dC = DIRECTIONS[direction]
         if not is_within_bounds(grid, row + dR, col + dC):
             break
         if grid[row + dR][col + dC] == '.':

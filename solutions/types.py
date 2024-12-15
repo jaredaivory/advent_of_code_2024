@@ -7,7 +7,7 @@ class SolutionClass[D, R](ABC):
 
     @classmethod
     @abstractmethod
-    def import_from_file(self, path: D | str) -> D:
+    def import_from_file(self, path: str) -> D:
         raise NotImplementedError
 
     @classmethod
