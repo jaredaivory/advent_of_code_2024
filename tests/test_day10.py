@@ -24,4 +24,8 @@ def test_find_trailheads():
 
 
 def test_get_trailhead_scores():
-    assert 36 == get_trailhead_scores(TEST_TRAILHEADS, TEST_DATA)
+    assert 81 == get_trailhead_scores(TEST_TRAILHEADS, TEST_DATA)
+
+
+def test_get_trailhead_scores_unique():
+    assert 36 == get_trailhead_scores_unique(TEST_TRAILHEADS, TEST_DATA)
