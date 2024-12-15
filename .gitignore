@@ -11,3 +11,5 @@ solutions/*/.pytest*
 
 solutions/*/puzzle_input.txt
 __pycache__
+
+input_data.txt
