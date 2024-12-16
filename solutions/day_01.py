@@ -14,9 +14,13 @@ class Solution(SolutionClass[Tuple[List[int], List[int]], int]):
 
     @classmethod
     def import_from_file(self, path):
-        with open(path, 'r') as file:
-            arr_1, arr_2 = [list(arr) for arr in zip(
-                *[[int(num) for num in line.split()] for line in file.readlines()])]
+        with open(path, "r") as file:
+            arr_1, arr_2 = [
+                list(arr)
+                for arr in zip(
+                    *[[int(num) for num in line.split()] for line in file.readlines()]
+                )
+            ]
             self.data = (arr_1, arr_2)
             return self.data
 
@@ -38,8 +42,7 @@ def total_distance_between_lists(arr1: List[int], arr2: List[int]) -> int:
 
     total_distance = 0
     while arr2:
-        total_distance += abs(heapq.heappop(arr1) -
-                              heapq.heappop(arr2))
+        total_distance += abs(heapq.heappop(arr1) - heapq.heappop(arr2))
     return total_distance
 
 
@@ -49,7 +52,10 @@ def similarity_score(arr1: List[int], arr2: List[int]) -> int:
     similarity_score = 0
 
     for location_id in arr2:
-        similarity_score += location_id_count[location_id] * \
-            location_id if location_id in location_id_count else 0
+        similarity_score += (
+            location_id_count[location_id] * location_id
+            if location_id in location_id_count
+            else 0
+        )
 
     return similarity_score

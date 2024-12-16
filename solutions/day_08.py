@@ -69,6 +69,5 @@ class Solution(SolutionClass[List[List[str]], int]):
 
 
 def import_from_file(path) -> List[List[str]]:
-    with open(path, 'r') as file:
-        return [[c for c in line.strip()]
-                for line in file.readlines()]
+    with open(path, "r") as file:
+        return [[c for c in line.strip()] for line in file.readlines()]

@@ -25,22 +25,29 @@ class Solution(SolutionClass[List[Tuple[int, List[int]]], int]):
 
 
 def import_from_file(path: str) -> List[Tuple[int, List[int]]]:
-    with open(path, 'r') as file:
+    with open(path, "r") as file:
         res = []
         for line in file.readlines():
             val, expression = line.strip().split(":")
-            res.append((int(val), [int(num)
-                       for num in expression.strip().split()]))
+            res.append((int(val), [int(num) for num in expression.strip().split()]))
 
         return res
 
 
-def backtrack(result: int, values: List[int], functions: List[Callable], index: int = 0, current_value: int = 0) -> bool:
+def backtrack(
+    result: int,
+    values: List[int],
+    functions: List[Callable],
+    index: int = 0,
+    current_value: int = 0,
+) -> bool:
     if index == len(values):
         return current_value == result
     else:
         for func in functions:
-            if backtrack(result, values, functions, index + 1, func(current_value, values[index])):
+            if backtrack(
+                result, values, functions, index + 1, func(current_value, values[index])
+            ):
                 return True
         # if backtrack(result, values, index + 1, current_value + values[index]):
         #     return True
@@ -51,7 +58,9 @@ def backtrack(result: int, values: List[int], functions: List[Callable], index: 
     return False
 
 
-def total_calibration(data: List[Tuple[int, List[int]]], functions: List[Callable[[int, int], int]]) -> int:
+def total_calibration(
+    data: List[Tuple[int, List[int]]], functions: List[Callable[[int, int], int]]
+) -> int:
     x = 0
     for result, values in data:
         if backtrack(result, values, functions, 1, values[0]):

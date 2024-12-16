@@ -21,19 +21,19 @@ class Solution(SolutionClass[List[List[int]], int]):
     @classmethod
     def part_two(self, *args):
         raise NotImplementedError
+
     pass
 
 
 def import_from_file(path: str) -> List[List[int]]:
-    with open(path, 'r') as file:
-        return [[int(val) for val in line.split(" ")]
-                for line in file.readlines()]
+    with open(path, "r") as file:
+        return [[int(val) for val in line.split(" ")] for line in file.readlines()]
 
 
 def is_increasing_arr(arr: List[int], min_change: int, max_change: int) -> bool:
-    isIncreasing = (arr[1]-arr[0]) > 0
+    isIncreasing = (arr[1] - arr[0]) > 0
     for i in range(1, len(arr)):
-        change = arr[i] - arr[i-1]
+        change = arr[i] - arr[i - 1]
         if not (min_change <= abs(change) <= max_change):
             return False
         if isIncreasing != (change > 0):
@@ -41,7 +41,9 @@ def is_increasing_arr(arr: List[int], min_change: int, max_change: int) -> bool:
     return True
 
 
-def find_safe_reports(reports: List[List[int]], min_change: int, max_change: int) -> int:
+def find_safe_reports(
+    reports: List[List[int]], min_change: int, max_change: int
+) -> int:
     safe_reports = 0
     for report in reports:
         if is_increasing_arr(report, min_change, max_change):

@@ -1,10 +1,8 @@
-
 from typing import List
 from .types import SolutionClass
 
 
-DIRECTIONS = [(0, 1), (0, -1), (1, 0), (-1, 0),
-              (1, 1), (1, -1), (-1, 1), (-1, -1)]
+DIRECTIONS = [(0, 1), (0, -1), (1, 0), (-1, 0), (1, 1), (1, -1), (-1, 1), (-1, -1)]
 
 
 class Solution(SolutionClass[List[List[chr]], int]):
@@ -25,7 +23,7 @@ class Solution(SolutionClass[List[List[chr]], int]):
 
 
 def import_from_file(path: str) -> List[List[chr]]:
-    with open(path, 'r') as file:
+    with open(path, "r") as file:
         return [[c for c in line.strip()] for line in file.readlines()]
     pass
 

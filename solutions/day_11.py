@@ -36,6 +36,7 @@ def memoize(func):
             return memo[(val, num)]
         memo[(val, num)] = func(*args)
         return memo[(val, num)]
+
     return _
 
 
@@ -44,8 +45,8 @@ def apply_rules(val: int):
         return [1]
     elif len(str(val)) % 2 == 0:
         s = str(val)
-        left = int(s[:len(s)//2])
-        right = int(s[len(s)//2:])
+        left = int(s[: len(s) // 2])
+        right = int(s[len(s) // 2 :])
         return [left, right]
     return [val * 2024]
 
@@ -55,13 +56,13 @@ def total_rocks(val: int, blinks: int):
     if blinks == 0:
         return 1
     if val == 0:
-        return total_rocks(1, blinks-1)
+        return total_rocks(1, blinks - 1)
     elif len(str(val)) % 2 == 0:
         s = str(val)
-        left = int(s[:len(s)//2])
-        right = int(s[len(s)//2:])
-        return total_rocks(left, blinks-1) + total_rocks(right, blinks-1)
-    return total_rocks(val * 2024, blinks-1)
+        left = int(s[: len(s) // 2])
+        right = int(s[len(s) // 2 :])
+        return total_rocks(left, blinks - 1) + total_rocks(right, blinks - 1)
+    return total_rocks(val * 2024, blinks - 1)
 
 
 def get_total_rocks(values: List[int], n: int) -> List[int]:

@@ -27,8 +27,8 @@ class Solution(SolutionClass[str, int]):
 
 
 def import_from_file(path) -> str:
-    with open(path, 'r') as file:
-        return ''.join(file.readline())
+    with open(path, "r") as file:
+        return "".join(file.readline())
 
 
 def diskmap_to_list(diskmap: str) -> List[chr]:
@@ -64,21 +64,21 @@ def compact_memory_segments(memory_block: List[Optional[int]]) -> List[int]:
     free_space = get_free_space(memory_block)
     print(free_space)
 
-    def swap(
-        x, y): memory_block[x], memory_block[y] = memory_block[y], memory_block[x]
+    def swap(x, y):
+        memory_block[x], memory_block[y] = memory_block[y], memory_block[x]
 
-    for i in range(len(memory_block)-1, -1, -1):
+    for i in range(len(memory_block) - 1, -1, -1):
         if memory_block[i] == None:
             continue
         j = i
-        while j > 0 and memory_block[j-1] == memory_block[i]:
+        while j > 0 and memory_block[j - 1] == memory_block[i]:
             j -= 1
         for idx, (frm, to) in enumerate(free_space):
             memory_size = i - j + 1
             if (to - frm) >= memory_size:
                 for k in range(memory_size):
-                    swap(frm+k, j+k)
-                free_space[idx] = (frm+memory_size, to)
+                    swap(frm + k, j + k)
+                free_space[idx] = (frm + memory_size, to)
                 break
     return memory_block
 

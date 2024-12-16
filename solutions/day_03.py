@@ -26,7 +26,7 @@ class Solution(SolutionClass[List[str], int]):
 
 
 def import_from_file(path: str) -> List[str]:
-    with open(path, 'r') as file:
+    with open(path, "r") as file:
         return [line for line in file.readlines()]
     pass
 

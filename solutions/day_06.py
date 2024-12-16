@@ -24,7 +24,7 @@ class Solution(SolutionClass[List[List[chr]], bool]):
 
     @classmethod
     def part_one(self, *args):
-        starting_row, starting_col = get_starting_point(self.data, '^')
+        starting_row, starting_col = get_starting_point(self.data, "^")
         return number_of_unique_positions(self.data, starting_row, starting_col)
 
     @classmethod
@@ -33,7 +33,7 @@ class Solution(SolutionClass[List[List[chr]], bool]):
 
 
 def import_from_file(path: str) -> List[List[chr]]:
-    with open(path, 'r') as file:
+    with open(path, "r") as file:
         return [[c for c in line.strip()] for line in file.readlines()]
 
 
@@ -60,7 +60,7 @@ def number_of_unique_positions(grid: List[List[chr]], row: int, col: int) -> int
         dR, dC = DIRECTIONS[direction]
         if not is_within_bounds(grid, row + dR, col + dC):
             break
-        if grid[row + dR][col + dC] == '.':
+        if grid[row + dR][col + dC] == ".":
             row += dR
             col += dC
             positions.add((row, col))
@@ -72,7 +72,6 @@ def number_of_unique_positions(grid: List[List[chr]], row: int, col: int) -> int
 
 if __name__ == "__main__":
     grid = import_input("puzzle_input.txt")
-    starting_row, starting_col = get_starting_point(grid, '^')
+    starting_row, starting_col = get_starting_point(grid, "^")
     part_one_solution = part_one_solve(grid, starting_row, starting_col)
-    print(
-        f"Day 01 | Part One - Solution: {part_one_solution}")
+    print(f"Day 01 | Part One - Solution: {part_one_solution}")
