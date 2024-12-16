@@ -14,3 +14,4 @@ __pycache__
 
 input_data.txt
 .DS_store
+.vscode
