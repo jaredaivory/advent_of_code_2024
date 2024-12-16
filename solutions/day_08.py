@@ -2,7 +2,7 @@ from .types import SolutionClass
 from typing import List, Optional
 
 
-class Day08Solution(SolutionClass[List[List[str]], int]):
+class Solution(SolutionClass[List[List[str]], int]):
     data: List[List[str]]
 
     def __init__(self, path: Optional[str] = None):
