@@ -13,3 +13,4 @@ solutions/*/puzzle_input.txt
 __pycache__
 
 input_data.txt
+.DS_store
