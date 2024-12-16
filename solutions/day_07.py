@@ -2,7 +2,7 @@ from typing import List, Tuple, Optional, Callable
 from .types import SolutionClass
 
 
-class Day07Solution(SolutionClass[List[Tuple[int, List[int]]], int]):
+class Solution(SolutionClass[List[Tuple[int, List[int]]], int]):
     data: List[Tuple[int, List[int]]]
 
     def __init__(self, path: Optional[str] = None):

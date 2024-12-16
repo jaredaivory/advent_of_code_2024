@@ -14,7 +14,7 @@ TEST_DATA = [['M', 'M', 'M', 'S', 'X', 'X', 'M', 'A', 'S', 'M'],
              ['M', 'X', 'M', 'X', 'A', 'X', 'M', 'A', 'S', 'X']]
 
 
-test_solution = Day04Solution()
+test_solution = Solution()
 
 
 def test_import():

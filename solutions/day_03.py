@@ -3,7 +3,7 @@ from typing import List, Optional, Pattern
 import re
 
 
-class Day03Solution(SolutionClass[List[str], int]):
+class Solution(SolutionClass[List[str], int]):
     data: List[str]
 
     def __init__(self, path: Optional[str] = None):

@@ -41,7 +41,7 @@ TEST_ORDERING_HASH = {
     53: {29, 13},
 }
 
-test_solution = Day05Solution()
+test_solution = Solution()
 
 
 def test_import():

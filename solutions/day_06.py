@@ -9,7 +9,7 @@ LEFT = (0, -1)
 DIRECTIONS = [UP, RIGHT, DOWN, LEFT]
 
 
-class Day06Solution(SolutionClass[List[List[chr]], bool]):
+class Solution(SolutionClass[List[List[chr]], bool]):
     data: List[List[chr]]
 
     def __init__(self, path: Optional[str] = None):

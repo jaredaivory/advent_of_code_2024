@@ -2,7 +2,7 @@ from . import *
 from solutions.day_06 import *
 
 TEST_FILE = get_root_path().joinpath("data/example_day06.txt")
-test_solution = Day06Solution()
+test_solution = Solution()
 
 
 TEST_GRID = [

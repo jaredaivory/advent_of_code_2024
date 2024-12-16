@@ -3,7 +3,7 @@ from . import *
 
 
 TEST_FILE = get_root_path().joinpath("data/example_day02.txt")
-test_solution = Day02Solution()
+test_solution = Solution()
 
 
 def test_import():

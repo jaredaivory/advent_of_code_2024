@@ -4,7 +4,7 @@ from typing import List, Tuple, Optional
 import heapq
 
 
-class Day01Solution(SolutionClass[Tuple[List[int], List[int]], int]):
+class Solution(SolutionClass[Tuple[List[int], List[int]], int]):
     data: Tuple[List[int], List[int]]
 
     def __init__(self, path: Optional[str] = None):

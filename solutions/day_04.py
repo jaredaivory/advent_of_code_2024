@@ -7,7 +7,7 @@ DIRECTIONS = [(0, 1), (0, -1), (1, 0), (-1, 0),
               (1, 1), (1, -1), (-1, 1), (-1, -1)]
 
 
-class Day04Solution(SolutionClass[List[List[chr]], int]):
+class Solution(SolutionClass[List[List[chr]], int]):
     data: List[List[chr]]
 
     @classmethod
