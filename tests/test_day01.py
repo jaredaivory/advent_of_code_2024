@@ -4,7 +4,7 @@ from . import *
 TEST_FILE = get_root_path().joinpath("data/example_day01.txt")
 
 
-test_solution = day_01.Day01Solution()
+test_solution = day_01.Solution()
 
 
 def test_import():
