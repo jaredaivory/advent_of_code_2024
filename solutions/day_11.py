@@ -46,7 +46,7 @@ def apply_rules(val: int):
     elif len(str(val)) % 2 == 0:
         s = str(val)
         left = int(s[: len(s) // 2])
-        right = int(s[len(s) // 2 :])
+        right = int(s[len(s) // 2:])
         return [left, right]
     return [val * 2024]
 
@@ -60,7 +60,7 @@ def total_rocks(val: int, blinks: int):
     elif len(str(val)) % 2 == 0:
         s = str(val)
         left = int(s[: len(s) // 2])
-        right = int(s[len(s) // 2 :])
+        right = int(s[len(s) // 2:])
         return total_rocks(left, blinks - 1) + total_rocks(right, blinks - 1)
     return total_rocks(val * 2024, blinks - 1)
 
